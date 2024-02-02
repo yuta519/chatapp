@@ -6,7 +6,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 gem 'bootsnap', require: false
-gem 'faker'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg'
@@ -20,6 +19,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
   gem 'rubocop', require: false
   gem 'web-console'
 end
