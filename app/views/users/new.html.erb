@@ -1,0 +1,13 @@
+<%= form_with(model: @user) do |f| %>
+  <%= render 'shared/error_messages', object: @user %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <a href=<%= users_path %>><button>キャンセル</button></a>
+  <%= f.submit "Save" %>
+<% end %>
