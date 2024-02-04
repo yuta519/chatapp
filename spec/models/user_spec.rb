@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
         expect(target.valid?).to be_truthy
       end
 
-      it 'must have no id' do
+      it 'must have a id' do
         expect(target.id).to be_present
       end
 
