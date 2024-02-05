@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_04_005238) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_05_173215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_04_005238) do
     t.string "name"
     t.string "email"
     t.datetime "disabled_at"
+    t.bigint "father_id"
+    t.bigint "mother_id"
+    t.index ["father_id"], name: "index_users_on_father_id"
+    t.index ["mother_id"], name: "index_users_on_mother_id"
   end
 
+  add_foreign_key "users", "users", column: "father_id"
+  add_foreign_key "users", "users", column: "mother_id"
 end
